@@ -39,6 +39,13 @@
     // Public
         app.use(express.static(path.join(__dirname,"public")))     
 // Rotas
+app.get('/', (req,res) => {
+    res.render("index")
+})
+
+app.get('/posts', (req, res) => {
+    res.send("lista de posts")
+})
         app.use('/admin', admin)
 // Outros
 const PORT = 27017
