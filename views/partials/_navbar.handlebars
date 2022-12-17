@@ -10,17 +10,17 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/admin/categorias">Categorias</a>
+          <a class="nav-link" href="/categorias">Categorias</a>
+        </li>
+        {{#if user}}
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link active" href="/usuarios/login">login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/admin/postagens">Criar postagem</a>
+          <a class="nav-link active" href="/usuarios/registro">Registro</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Registro</a>
-        </li>
+        {{/if}}
       </ul>
       
     </div>
