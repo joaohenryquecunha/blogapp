@@ -6,7 +6,7 @@ const Usuario = new Schema({
         type: String,
         require: true
     },
-    eAdimin:{
+    eAdmin:{
         type:Number,
         default:0
     },

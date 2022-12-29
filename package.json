@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/joaohenryquecunha/blogapp/issues"
   },
-  "homepage": "https://github.com/joaohenryquecunha/blogapp#readme"
+  "homepage": "https://github.com/joaohenryquecunha/blogapp#readme",
+  "dependencies": {
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
+  }
 }

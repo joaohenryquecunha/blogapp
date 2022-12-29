@@ -16,15 +16,15 @@
     const passport = require("passport")
     require("./config/auth")(passport)
     const db = require("./config/db")
+    
 
 // Configurações
     // Sessão
         app.use(session({
-            secret: "cursoddenode",
+            secret: "cursodenode",
             resave: true,
             saveUninitialized: true
         }))
-
         app.use(passport.initialize())
         app.use(passport.session())
         app.use(flash())
@@ -35,7 +35,7 @@
             res.locals.error_msg = req.flash("error_msg")
             res.locals.error = req.flash("error")
             res.locals.user = req.user || null;
-            next()
+            next();
         })    
     // Body Parser
         app.use(bodyParser.urlencoded({extended: true}))
@@ -119,7 +119,7 @@ app.get('/posts', (req, res) => {
         app.use('/usuarios', usuarios)
 
 // Outros
-const PORT = process.env.PORT || 27017
+const PORT = 27017
 app.listen(PORT,() => {
     console.log("servidor rodando na "+(PORT))
 })

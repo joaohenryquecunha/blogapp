@@ -1,6 +1,8 @@
 const localStrategy = require("passport-local").Strategy
 const mongoose = require("mongoose")
 const bcrypt = require("bcryptjs")
+const {serializeUser} = require("passport")
+
 
 // Model de usuário
 require("../models/Usuario")
@@ -27,10 +29,12 @@ passport.use(new localStrategy({usernameField: 'email', passwordField: "senha"},
 }))
 
 passport.serializeUser((usuario, done) => {
+    
     done(null, usuario._id)
 })
 
 passport.deserializeUser((_id, done) => {
+    
     Usuario.findById(_id, (erro, usuario) => {
         done(erro, usuario)
     })
