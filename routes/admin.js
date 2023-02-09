@@ -162,7 +162,7 @@ router.post("/postagens/nova", eAdmin,(req, res) => {
     if(req.body.categoria == "0"){
         erros.push({texto: "Categoria inválida, registre uma categoria."})
     }
-
+ 
     if(erros.length > 0){
         res.render("admin/addpostagem", {erros: erros})
     }
